@@ -1,1 +1,1 @@
-print("Hello World")
+print("Hello World")  # Prints the text "Hello World" to the console
