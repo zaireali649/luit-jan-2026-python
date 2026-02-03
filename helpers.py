@@ -18,6 +18,16 @@ def get_s3_client() -> boto3.client:
     """
     return boto3.client('s3')
 
+def list_s3_buckets(client: boto3.client) -> list:
+    """
+    Lists all S3 buckets.
+
+    Returns:
+        list: A list of S3 bucket names.
+    """
+    response = client.list_buckets()
+    return [bucket['Name'] for bucket in response['Buckets']]
+
 def describe_instances(client: boto3.client) -> list:
     """
     Describes EC2 instances and returns a list of instances.
